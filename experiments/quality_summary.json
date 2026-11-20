@@ -1,0 +1,32 @@
+{
+  "v1": {
+    "attack_count": 5,
+    "average_total_out_of_20": 14.2,
+    "dimension_averages": {
+      "relevance_1_to_5": 5,
+      "realism_1_to_5": 3,
+      "creativity_1_to_5": 2,
+      "expected_behavior_1_to_5": 4.2
+    }
+  },
+  "v2": {
+    "attack_count": 5,
+    "average_total_out_of_20": 15,
+    "dimension_averages": {
+      "relevance_1_to_5": 4.2,
+      "realism_1_to_5": 3.8,
+      "creativity_1_to_5": 3.2,
+      "expected_behavior_1_to_5": 3.8
+    }
+  },
+  "v3": {
+    "attack_count": 5,
+    "average_total_out_of_20": 13.6,
+    "dimension_averages": {
+      "relevance_1_to_5": 4,
+      "realism_1_to_5": 3.4,
+      "creativity_1_to_5": 2.6,
+      "expected_behavior_1_to_5": 3.6
+    }
+  }
+}

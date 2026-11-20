@@ -1,0 +1,23 @@
+[
+  {
+    "version": "v1",
+    "total_attacks": 5,
+    "valid_attacks": 5,
+    "category_coverage": 5,
+    "unique_prompts": 5
+  },
+  {
+    "version": "v2",
+    "total_attacks": 5,
+    "valid_attacks": 5,
+    "category_coverage": 5,
+    "unique_prompts": 5
+  },
+  {
+    "version": "v3",
+    "total_attacks": 5,
+    "valid_attacks": 5,
+    "category_coverage": 5,
+    "unique_prompts": 5
+  }
+]
