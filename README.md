@@ -163,9 +163,37 @@ promptshield-redteam-kit/
 
 ## 🚀 Getting Started
 
-Setup and execution instructions will be added as the implementation progresses.
+```bash
+pip install -r requirements.txt
+cp .env.example .env        # then add your GROQ_API_KEY
+```
 
-The project will use environment variables for API credentials. API keys and other secrets must not be committed to the repository.
+API keys and other secrets must not be committed to the repository.
+
+### Running attacks against the target chatbot
+
+`src/target_chatbot.py` is a Groq-backed chatbot that follows a system prompt (`chat(system_prompt, user_message)`).
+`src/attack_runner.py` sends each generated attack to it and saves the responses to `experiments/chatbot_test_results_<version>.json`.
+
+```bash
+python src/attack_runner.py                      # run saved v2 attacks
+python src/attack_runner.py --version v3         # run saved v3 attacks
+python src/attack_runner.py --generate --num 5   # generate fresh attacks, then run them
+python src/attack_runner.py --mock               # offline test, no API key needed
+```
+
+From Python:
+
+```python
+from src.attack_generator import generate_attacks
+from src.attack_runner import run_attacks, save_results
+
+attacks = generate_attacks(system_prompt, num_attacks=5, version="v2")
+results = run_attacks(attacks, system_prompt=system_prompt)
+save_results(results)
+```
+
+Each result record contains `attack_id`, `category`, `attack_prompt`, `target_response`, `expected_safe_behavior`, `model`, `evaluation_status` (`"pending"` for the evaluator), and a preliminary `heuristic_verdict` / `heuristic_flags` from a rule-based pre-screen.
 
 ## 🔐 Responsible AI & Testing Scope
 
